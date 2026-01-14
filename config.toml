@@ -2,6 +2,7 @@ baseURL       = "https://sembrarycrecer.org/"
 title         = "Sembrar y Crecer | Fundación"
 theme         = "roxo-hugo"
 summarylength = 25
+paginate = 200
 googleAnalytics = "G-MBC1T5ET3Z"
 
 languageCode  = "es"

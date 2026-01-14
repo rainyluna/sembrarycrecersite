@@ -25,6 +25,39 @@
   overflow: hidden;
 }
 
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+
+  .filter-btn {
+    padding: 10px 25px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    background: transparent;
+    color: #666;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:hover,
+    &.active {
+      background: #333; // You might want to use a brand color variable here if available, e.g. $primary-color
+      color: white;
+      border-color: #333;
+    }
+    
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

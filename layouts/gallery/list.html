@@ -15,23 +15,53 @@
 
 <section class="site-gallery">
   <div class="container">
+    <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Todo</button>
+        <button class="filter-btn" data-filter="escuela-empoderarte">Escuela Empoderarte</button>
+        <button class="filter-btn" data-filter="entrega-donaciones">Entrega Donaciones</button>
+        <button class="filter-btn" data-filter="eventos">Eventos</button>
+        <button class="filter-btn" data-filter="apoyo-a-peluditos">Apoyo a Peluditos</button>
+    </div>
+
     <div class="gallery-grid">
       {{ range .Pages }}
-      <div class="gallery-item">
+      <div class="gallery-item" data-category="{{ .Params.category | default "eventos" | urlize }}">
           {{ with .Params.image }}
           <div class="gallery-item-image">
-            <img src="{{ . | absURL }}" alt="{{ $.Params.caption }}">
+            <img src="{{ . | absURL }}" alt="Gallery Image">
           </div>
           {{ end }}
-          {{ if .Params.caption }}
-          <div class="gallery-item-caption">
-            <p>{{ .Params.caption }}</p>
-          </div>
-          {{ end }}
-        </div>
+      </div>
       {{ end }}
     </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            galleryItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                    // Optional: Add animation class here
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
 
 {{ end }}
