@@ -37,12 +37,12 @@ defaultContentLanguage = 'es'
     url     = "gallery"
     weight  = 2
   [[menu.nav]]
-    name    = "menu_blog"
-    url     = "blog"
+    name    = "menu_arte"
+    url     = "arte"
     weight  = 3
   [[menu.nav]]
-    name    = "menu_privacy"
-    url     = "pvpolicy"
+    name    = "menu_blog"
+    url     = "blog"
     weight  = 4
   [[menu.nav]]
     name    = "menu_donate"
@@ -132,6 +132,9 @@ defaultContentLanguage = 'es'
         [[params.footer.sitemap.link]]
           name = "Contact"
           url  = "contact"
+        [[params.footer.sitemap.link]]
+          name = "Privacidad"
+          url  = "pvpolicy"
       # Footer Social Media
       [params.footer.social]
         title   = "Redes Sociales"

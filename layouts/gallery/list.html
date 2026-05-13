@@ -16,11 +16,11 @@
 <section class="site-gallery">
   <div class="container">
     <div class="gallery-filters">
-        <button class="filter-btn active" data-filter="all">Todo</button>
-        <button class="filter-btn" data-filter="escuela-empoderarte">Escuela Empoderarte</button>
-        <button class="filter-btn" data-filter="entrega-donaciones">Entrega Donaciones</button>
-        <button class="filter-btn" data-filter="eventos">Eventos</button>
-        <button class="filter-btn" data-filter="apoyo-a-peluditos">Apoyo a Peluditos</button>
+        <button class="filter-btn active" data-filter="all">{{ i18n "filter_all" }}</button>
+        <button class="filter-btn" data-filter="escuela-empoderarte">{{ i18n "filter_empoderarte" }}</button>
+        <button class="filter-btn" data-filter="entrega-donaciones">{{ i18n "filter_donations" }}</button>
+        <button class="filter-btn" data-filter="eventos">{{ i18n "filter_events" }}</button>
+        <button class="filter-btn" data-filter="apoyo-a-peluditos">{{ i18n "filter_pets" }}</button>
     </div>
 
     <div class="gallery-grid">
@@ -28,7 +28,7 @@
       <div class="gallery-item" data-category="{{ .Params.category | default "eventos" | urlize }}">
           {{ with .Params.image }}
           <div class="gallery-item-image">
-            <img src="{{ . | absURL }}" alt="Gallery Image">
+            <img src="{{ . | absURL }}" alt="{{ $.Title }}">
           </div>
           {{ end }}
       </div>

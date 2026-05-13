@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<section class="site-arte-header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Params.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="site-arte">
+  <div class="container">
+    <div class="arte-grid">
+      {{ range .Pages }}
+      <div class="arte-card">
+        {{ with .Params.image }}
+        <div class="arte-card-image">
+          <img src="{{ . | absURL }}" alt="{{ $.Params.title }}" loading="lazy">
+        </div>
+        {{ end }}
+        <div class="arte-card-info">
+          <h3 class="arte-card-title">{{ .Title }}</h3>
+          <p class="arte-card-artist">{{ .Params.artist }}</p>
+          <div class="arte-card-specs">
+            <span class="arte-spec">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+              {{ .Params.medium }}
+            </span>
+            <span class="arte-spec">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+              {{ .Params.dimensions }}
+            </span>
+            <span class="arte-spec">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              {{ .Params.category }}
+            </span>
+            <span class="arte-spec">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              {{ .Params.year }}
+            </span>
+          </div>
+          {{ with .Params.price }}
+          <div class="arte-card-price">
+            <span class="price-label">Precio:</span>
+            <span class="price-tag">{{ . }}</span>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}

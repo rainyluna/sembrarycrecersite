@@ -1,0 +1,152 @@
+// Arte Section
+.site-arte-header {
+  padding: 150px 0 0;
+  @include mobile {
+    padding: 100px 0 0;
+  }
+
+  h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    @include mobile {
+      font-size: 35px;
+      letter-spacing: 4px;
+    }
+  }
+
+  p {
+    line-height: 28px;
+    margin-bottom: 0;
+    color: $dark-gray;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.site-arte {
+  padding: 60px 0 180px;
+  overflow: hidden;
+}
+
+.arte-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.arte-card {
+  background: $white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s $site-ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  &-image {
+    overflow: hidden;
+    height: 300px;
+    background: #f0ece6;
+    position: relative;
+
+    @include mobile {
+      height: 250px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s $site-ease;
+    }
+
+    &:hover img {
+      transform: scale(1.06);
+    }
+  }
+
+  &-info {
+    padding: 22px 24px 26px;
+  }
+
+  &-title {
+    font-family: $primary-font;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 4px;
+    color: $text-color-dark;
+  }
+
+  &-artist {
+    font-family: $secondary-font;
+    font-size: 15px;
+    color: $primary-color;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  &-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+.arte-spec {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-family: $secondary-font;
+  color: $dark-gray;
+  background: $gray;
+  padding: 5px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+
+  svg {
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+}
+
+.arte-card-price {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-label {
+  font-family: $secondary-font;
+  font-size: 14px;
+  color: $dark-gray;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.price-tag {
+  font-family: $primary-font;
+  font-weight: 700;
+  font-size: 20px;
+  color: $primary-color;
+}
