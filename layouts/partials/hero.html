@@ -2,6 +2,14 @@
   {{ if .enable }}
   {{ "<!-- Site Hero Start -->" | safeHTML }}
   <section class="site-hero" style="background-image: url('{{ .background_image }}');">
+    {{ with .background_video }}
+    <video class="site-hero-video" autoplay muted loop playsinline preload="metadata"
+           poster="{{ $.Site.Params.banner.video_poster | default "/images/backgrounds/hero-poster.jpg" | relURL }}"
+           aria-hidden="true">
+      <source src="{{ replace . ".mp4" ".webm" | relURL }}" type="video/webm">
+      <source src="{{ . | relURL }}" type="video/mp4">
+    </video>
+    {{ end }}
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">

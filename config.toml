@@ -16,6 +16,7 @@ defaultContentLanguage = 'es'
     [languages.es.params.banner]
       enable = true
       background_image = "/images/backgrounds/hero-background.jpg"
+      background_video = "/videos/hero.mp4"
 
   [languages.en]
     languageCode = 'en-US'
@@ -25,6 +26,7 @@ defaultContentLanguage = 'es'
     [languages.en.params.banner]
       enable = true
       background_image = "/images/backgrounds/hero-background.jpg"
+      background_video = "/videos/hero.mp4"
 # Site Menus
 [menu]
   # Navbar Menus
@@ -93,6 +95,7 @@ defaultContentLanguage = 'es'
   [params.banner]
     enable                = true
     background_image      = "images/backgrounds/hero-background.jpg"
+    background_video      = "/videos/hero.mp4"
     heading               = "Sembramos creatividad, cultivamos educación con Propósito."
     tagline               = "Nosotros"
 
